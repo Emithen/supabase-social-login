@@ -12,7 +12,7 @@ const supabase = createClient(
   Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
 )
 
-const app = new Hono().basePath('/api-server');
+const app = new Hono().basePath('/api');
 
 // cors 미들웨어 설정
 app.use(
