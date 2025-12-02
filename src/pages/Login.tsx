@@ -1,11 +1,11 @@
-import supabase from "../supabase";
+import supabase from "../supabaseClient";
 
 const Login = () => {
   const signInWithGithub = async () => {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "github",
       options: {
-        redirectTo: "http://localhost:5173/login",
+        redirectTo: "http://localhost:5173/dashboard",
       },
     });
     console.log(data, error);
@@ -14,7 +14,7 @@ const Login = () => {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "kakao",
       options: {
-        redirectTo: "http://localhost:5173/login",
+        redirectTo: "http://localhost:5173/dashboard",
       },
     });
     console.log(data, error);
