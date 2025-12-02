@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Home = () => {
   const nav = useNavigate();
+
+  useEffect(() => {
+    nav("/login");
+  }, []);
 
   return (
     <>
@@ -14,7 +19,10 @@ const Home = () => {
       <div className="border cursor-pointer" onClick={() => nav("/about")}>
         Go to About 2 (동적/조건부 이동)
       </div>
-      <div className="border cursor-pointer mt-1 w-32 rounded-full px-4 flex items-center justify-center" onClick={() => nav("/login")}>
+      <div
+        className="border cursor-pointer mt-1 w-32 rounded-full px-4 flex items-center justify-center"
+        onClick={() => nav("/login")}
+      >
         Go to Login
       </div>
     </>
