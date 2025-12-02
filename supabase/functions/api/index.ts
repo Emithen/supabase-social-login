@@ -23,6 +23,11 @@ app.use(
   })
 );
 
+// ✔ OPTIONS 직접 처리 (Preflight 처리 필수!)
+app.options('/*', (c) => {
+  return c.text('ok');
+});
+
 /*
   # GET
   # /posts
@@ -46,3 +51,11 @@ app.get('/posts', async (c) => {
   if (error) return c.json({ error: error.message }, 500);
   return c.json(data);
 });
+
+/*
+  # app.fetch
+  - 이 app 이 모든 요청을 어떻게 처리할 지 정의한 함수
+  # Deno.serve()
+  - 그 함수를 server runtime 에 등록하는 역할
+*/
+Deno.serve(app.fetch);

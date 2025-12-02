@@ -1,7 +1,7 @@
 import HeaderActionBar from "../HeaderActionBar";
 import PostPreviewItem from "./PostPreviewItem";
 
-type Post = {
+export type Post = {
   id: number;
   user_id: string;
   title: string;

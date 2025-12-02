@@ -1,0 +1,19 @@
+// src/api/types.ts
+
+export interface Post {
+  id: number;
+  user_id: string;
+  title: string;
+  content: string;
+  category: string;
+  is_published: boolean;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface CreatePostDto {
+  title: string;
+  content: string;
+  category: string;
+  is_published?: boolean;
+}
